@@ -1,2 +1,7 @@
 # Stock Price Prediction Based on The Informer Network with Dense Connections!
-![Uploading image.png…]()
+
+![image](https://github.com/Chanpohsuan/Dense-Informer2025/blob/main/1.jpg)
+
+
+
+
