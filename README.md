@@ -2,11 +2,11 @@
 
 ![image](https://github.com/Chanpohsuan/Dense-Informer2025/blob/main/1.jpg)
 
-###### Environment requirement
+## Environment requirement
 Google_Colab
 
-###### Preparation
+## Preparation
 Download dataset
 
-###### Training
+## Training
 run Dense-informer.ipynb
