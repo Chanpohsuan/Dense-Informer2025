@@ -131,7 +131,7 @@ The detailed descriptions about the arguments are as following:
 
 ##Results
 we have updated the experiment results of all methods due to the change in data scaling
-![image](https://github.com/Chanpohsuan/Dense-Informer2025/blob/main/2.png](https://github.com/Chanpohsuan/Dense-Informer2025/blob/main/3.png)
+![image](https://github.com/Chanpohsuan/Dense-Informer2025/blob/main/3.png)
 
 ##Contact
 If you have any questions, feel free to contact Chan through Email (www904083@gmail.com) or Github issues. Pull requests are highly welcomed!
