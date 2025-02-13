@@ -6,7 +6,7 @@
 Google_Colab
 
 ###### Preparation
-
 Download dataset
- * 
 
+###### Training
+run Dense-informer.ipynb
