@@ -14,50 +14,117 @@ The  dataset used in the paper can be downloaded in the repo [Dataset](https://g
 run Dense-informer.ipynb
 ##Usage
 The detailed descriptions about the arguments are as following:
-Parameter name	Description of parameter
-model	The model of experiment. This can be set to informer, informerstack, informerlight(TBD)
-data	The dataset name
-root_path	The root path of the data file (defaults to ./data/ETT/)
-data_path	The data file name (defaults to ETTh1.csv)
-features	The forecasting task (defaults to M). This can be set to M,S,MS (M : multivariate predict multivariate, S : univariate predict univariate, MS : multivariate predict univariate)
-target	Target feature in S or MS task (defaults to OT)
-freq	Freq for time features encoding (defaults to h). This can be set to s,t,h,d,b,w,m (s:secondly, t:minutely, h:hourly, d:daily, b:business days, w:weekly, m:monthly).You can also use more detailed freq like 15min or 3h
-checkpoints	Location of model checkpoints (defaults to ./checkpoints/)
-seq_len	Input sequence length of Informer encoder (defaults to 96)
-label_len	Start token length of Informer decoder (defaults to 48)
-pred_len	Prediction sequence length (defaults to 24)
-enc_in	Encoder input size (defaults to 7)
-dec_in	Decoder input size (defaults to 7)
-c_out	Output size (defaults to 7)
-d_model	Dimension of model (defaults to 512)
-n_heads	Num of heads (defaults to 8)
-e_layers	Num of encoder layers (defaults to 2)
-d_layers	Num of decoder layers (defaults to 1)
-s_layers	Num of stack encoder layers (defaults to 3,2,1)
-d_ff	Dimension of fcn (defaults to 2048)
-factor	Probsparse attn factor (defaults to 5)
-padding	Padding type(defaults to 0).
-distil	Whether to use distilling in encoder, using this argument means not using distilling (defaults to True)
-dropout	The probability of dropout (defaults to 0.05)
-attn	Attention used in encoder (defaults to prob). This can be set to prob (informer), full (transformer)
-embed	Time features encoding (defaults to timeF). This can be set to timeF, fixed, learned
-activation	Activation function (defaults to gelu)
-output_attention	Whether to output attention in encoder, using this argument means outputing attention (defaults to False)
-do_predict	Whether to predict unseen future data, using this argument means making predictions (defaults to False)
-mix	Whether to use mix attention in generative decoder, using this argument means not using mix attention (defaults to True)
-cols	Certain cols from the data files as the input features
-num_workers	The num_works of Data loader (defaults to 0)
-itr	Experiments times (defaults to 2)
-train_epochs	Train epochs (defaults to 6)
-batch_size	The batch size of training input data (defaults to 32)
-patience	Early stopping patience (defaults to 3)
-learning_rate	Optimizer learning rate (defaults to 0.0001)
-des	Experiment description (defaults to test)
-loss	Loss function (defaults to mse)
-lradj	Ways to adjust the learning rate (defaults to type1)
-use_amp	Whether to use automatic mixed precision training, using this argument means using amp (defaults to False)
-inverse	Whether to inverse output data, using this argument means inversing output data (defaults to False)
-use_gpu	Whether to use gpu (defaults to True)
-gpu	The gpu no, used for training and inference (defaults to 0)
-use_multi_gpu	Whether to use multiple gpus, using this argument means using mulitple gpus (defaults to False)
-devices	Device ids of multile gpus (defaults to 0,1,2,3)
+<table>
+  <tr>
+    <td>Parameter name</td>
+    <td>Description of parameter</td>
+  </tr>
+  <tr>
+    <td>model</td>
+    <td>The model of experiment. This can be set to Dense-informer</td>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>The dataset name</td>
+  </tr>
+  <tr>
+    <td>features</td>
+    <td>The forecasting task (defaults to M). This can be set to M,S,MS (M : multivariate predict multivariate, S : univariate predict univariate, MS : multivariate predict univariate)</td>
+  </tr>
+  <tr>
+    <td>target</td>
+    <td>Target feature in S or MS task (defaults to OT)</td>
+  </tr>
+   <tr>
+    <td>freq</td>
+    <td>Freq for time features encoding (defaults to h). This can be set to s,t,h,d,b,w,m (s:secondly, t:minutely, h:hourly, d:daily, b:business days, w:weekly, m:monthly).You can also use more detailed freq like 15min or 3h</td>
+  </tr>
+  <tr>
+    <td>seq_len</td>
+    <td>Input sequence length of Informer encoder (defaults to 96)</td>
+  </tr>
+  <tr>
+    <td>label_len</td>
+    <td>Start token length of Informer decoder (defaults to 48)</td>
+  </tr>
+  <tr>
+    <td>pred_len</td>
+    <td>Prediction sequence length (defaults to 24)</td>
+  </tr>
+  <tr>
+    <td>d_model	</td>
+    <td>Dimension of model (defaults to 512)</td>
+  </tr>
+  <tr>
+    <td>n_heads</td>
+    <td>Num of heads (defaults to 8)</td>
+  </tr>
+  <tr>
+    <td>e_layers</td>
+    <td>Num of encoder layers (defaults to 3)</td>
+  </tr>
+  <tr>
+    <td>d_layers</td>
+    <td>Num of decoder layers (defaults to 2)</td>
+  </tr>
+  <tr>
+    <td>d_ff</td>
+    <td>Dimension of fcn (defaults to 2048)</td>
+  </tr>
+  <tr>
+    <td>factor</td>
+    <td>Probsparse attn factor (defaults to 5)</td>
+  </tr>
+  <tr>
+    <td>padding</td>
+    <td>Padding type(defaults to 0).</td>
+  </tr>
+  <tr>
+    <td>attn</td>
+    <td>Attention used in encoder (defaults to prob). This can be set to prob (informer), full (transformer)</td>
+  </tr>
+  <tr>
+    <td>embed</td>
+    <td>Time features encoding (defaults to timeF). This can be set to timeF, fixed, learned</td>
+  </tr>
+  <tr>
+    <td>activation</td>
+    <td>Activation function (defaults to gelu)</td>
+  </tr>
+  <tr>
+    <td>batch_size</td>
+    <td>The batch size of training input data (defaults to 32)</td>
+  </tr>
+  <tr>
+    <td>patience</td>
+    <td>Early stopping patience (defaults to 3)</td>
+  </tr>
+  <tr>
+    <td>learning_rate</td>
+    <td>Optimizer learning rate (defaults to 0.0001)</td>
+  </tr>
+  <tr>
+    <td>des</td>
+    <td>Experiment description (defaults to test)</td>
+  </tr>
+  <tr>
+    <td>loss</td>
+    <td>Loss function (defaults to MSE_Loss*0.2+Charbonnier_Loss*0.8)</td>
+  </tr>
+  <tr>
+    <td>lradj</td>
+    <td>Ways to adjust the learning rate (defaults to type1)</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
