@@ -7,6 +7,8 @@ Google_Colab
 
 ## Preparation
 Download dataset
+The  dataset used in the paper can be downloaded in the repo Dataset. The required data files should be name 'output'. A demo slice of the  data is illustrated in the following figure. Note that the input of each dataset is zero-mean normalized in this implementation.
+
 
 ## Training
 run Dense-informer.ipynb
