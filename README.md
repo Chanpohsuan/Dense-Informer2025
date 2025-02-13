@@ -128,3 +128,7 @@ The detailed descriptions about the arguments are as following:
     <td></td>
   </tr>
 </table>
+
+##Results
+
+![image](https://github.com/Chanpohsuan/Dense-Informer2025/blob/main/2.png)
